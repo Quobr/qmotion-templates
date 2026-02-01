@@ -1,0 +1,100 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "name": "@qmotion/templates",
+    "version": "0.1.0",
+    "description": "Copy-paste templates for QMotion videos",
+    "baseUrl": "https://raw.githubusercontent.com/Quobr/qmotion-templates/master",
+    "components": [
+        {
+            "name": "masked-reveal",
+            "type": "components",
+            "title": "Masked Reveal",
+            "description": "Apple-style text reveal with directional mask animation",
+            "dependencies": [
+                "@qmotion/core"
+            ],
+            "files": [
+                "src/components/MaskedReveal.tsx"
+            ],
+            "target": "templates/components"
+        },
+        {
+            "name": "parallax-glass",
+            "type": "components",
+            "title": "Parallax Glass",
+            "description": "Glassmorphism container with depth-based parallax",
+            "dependencies": [
+                "@qmotion/core"
+            ],
+            "files": [
+                "src/components/ParallaxGlass.tsx"
+            ],
+            "target": "templates/components"
+        },
+        {
+            "name": "kinetic-typography",
+            "type": "components",
+            "title": "Kinetic Typography",
+            "description": "Animated text with per-word or per-letter effects",
+            "dependencies": [
+                "@qmotion/core"
+            ],
+            "files": [
+                "src/components/KineticTypography.tsx"
+            ],
+            "target": "templates/components"
+        },
+        {
+            "name": "beat-reactive",
+            "type": "components",
+            "title": "Beat Reactive",
+            "description": "Elements that pulse to audio beats",
+            "dependencies": [
+                "@qmotion/core"
+            ],
+            "files": [
+                "src/components/BeatReactive.tsx"
+            ],
+            "target": "templates/components"
+        },
+        {
+            "name": "scale-bounce",
+            "type": "components",
+            "title": "Scale Bounce",
+            "description": "Micro-interaction with spring-based scale animation",
+            "dependencies": [
+                "@qmotion/core"
+            ],
+            "files": [
+                "src/components/ScaleBounce.tsx"
+            ],
+            "target": "templates/components"
+        },
+        {
+            "name": "fullscreen-takeover",
+            "type": "transitions",
+            "title": "Fullscreen Takeover",
+            "description": "Smooth expansion from element to fullscreen",
+            "dependencies": [
+                "@qmotion/core"
+            ],
+            "files": [
+                "src/transitions/FullscreenTakeover.tsx"
+            ],
+            "target": "templates/transitions"
+        },
+        {
+            "name": "grid-background",
+            "type": "layouts",
+            "title": "Grid Background",
+            "description": "Parallax grid background synchronized with camera",
+            "dependencies": [
+                "@qmotion/core"
+            ],
+            "files": [
+                "src/layouts/GridBackground.tsx"
+            ],
+            "target": "templates/layouts"
+        }
+    ]
+}
