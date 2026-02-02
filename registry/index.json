@@ -1,15 +1,27 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "name": "@qmotion/templates",
-    "version": "0.1.0",
+    "version": "0.3.0",
     "description": "Copy-paste templates for QMotion videos",
     "baseUrl": "https://raw.githubusercontent.com/Quobr/qmotion-templates/master",
+    "categories": {
+        "components": "Reusable animation building blocks",
+        "layouts": "Scene containers and backgrounds",
+        "transitions": "Scene-to-scene transitions",
+        "screenspace": "2.5D screen recordings with simulated mouse interaction"
+    },
     "components": [
         {
             "name": "masked-reveal",
             "type": "components",
             "title": "Masked Reveal",
             "description": "Apple-style text reveal with directional mask animation",
+            "tags": [
+                "text",
+                "reveal",
+                "apple-style",
+                "intro"
+            ],
             "dependencies": [
                 "@qmotion/core"
             ],
@@ -23,6 +35,12 @@
             "type": "components",
             "title": "Parallax Glass",
             "description": "Glassmorphism container with depth-based parallax",
+            "tags": [
+                "glass",
+                "depth",
+                "container",
+                "parallax"
+            ],
             "dependencies": [
                 "@qmotion/core"
             ],
@@ -36,6 +54,12 @@
             "type": "components",
             "title": "Kinetic Typography",
             "description": "Animated text with per-word or per-letter effects",
+            "tags": [
+                "text",
+                "typography",
+                "split",
+                "animation"
+            ],
             "dependencies": [
                 "@qmotion/core"
             ],
@@ -49,6 +73,12 @@
             "type": "components",
             "title": "Beat Reactive",
             "description": "Elements that pulse to audio beats",
+            "tags": [
+                "audio",
+                "beat",
+                "pulse",
+                "music"
+            ],
             "dependencies": [
                 "@qmotion/core"
             ],
@@ -62,6 +92,12 @@
             "type": "components",
             "title": "Scale Bounce",
             "description": "Micro-interaction with spring-based scale animation",
+            "tags": [
+                "interaction",
+                "button",
+                "click",
+                "spring"
+            ],
             "dependencies": [
                 "@qmotion/core"
             ],
@@ -75,6 +111,12 @@
             "type": "transitions",
             "title": "Fullscreen Takeover",
             "description": "Smooth expansion from element to fullscreen",
+            "tags": [
+                "transition",
+                "modal",
+                "expand",
+                "fullscreen"
+            ],
             "dependencies": [
                 "@qmotion/core"
             ],
@@ -88,6 +130,12 @@
             "type": "layouts",
             "title": "Grid Background",
             "description": "Parallax grid background synchronized with camera",
+            "tags": [
+                "background",
+                "grid",
+                "camera",
+                "parallax"
+            ],
             "dependencies": [
                 "@qmotion/core"
             ],
@@ -95,6 +143,97 @@
                 "src/layouts/GridBackground.tsx"
             ],
             "target": "templates/layouts"
+        },
+        {
+            "name": "mouse-provider",
+            "type": "screenspace",
+            "title": "Mouse Provider",
+            "description": "Context provider for simulated mouse position. Required for SimulatedMouse and HoverTrigger.",
+            "tags": [
+                "mouse",
+                "context",
+                "provider",
+                "screenspace"
+            ],
+            "dependencies": [
+                "@qmotion/core"
+            ],
+            "files": [
+                "src/hooks/useMouseController.tsx"
+            ],
+            "target": "templates/screenspace"
+        },
+        {
+            "name": "screenspace-3d",
+            "type": "screenspace",
+            "title": "Screen Space 3D",
+            "description": "2.5D perspective container with automatic mouse-following parallax",
+            "tags": [
+                "3d",
+                "perspective",
+                "parallax",
+                "container",
+                "screenspace"
+            ],
+            "requires": [
+                "mouse-provider"
+            ],
+            "dependencies": [
+                "@qmotion/core"
+            ],
+            "files": [
+                "src/layouts/ScreenSpace3D.tsx",
+                "src/hooks/useMouseController.tsx"
+            ],
+            "target": "templates/screenspace"
+        },
+        {
+            "name": "simulated-mouse",
+            "type": "screenspace",
+            "title": "Simulated Mouse",
+            "description": "Organic mouse cursor following waypoints with realistic jitter",
+            "tags": [
+                "mouse",
+                "cursor",
+                "waypoints",
+                "organic",
+                "screenspace"
+            ],
+            "requires": [
+                "mouse-provider"
+            ],
+            "dependencies": [
+                "@qmotion/core"
+            ],
+            "files": [
+                "src/components/SimulatedMouse.tsx",
+                "src/hooks/useMouseController.tsx"
+            ],
+            "target": "templates/screenspace"
+        },
+        {
+            "name": "hover-trigger",
+            "type": "screenspace",
+            "title": "Hover Trigger",
+            "description": "Auto-detects simulated mouse hover. No manual frame sync!",
+            "tags": [
+                "hover",
+                "interaction",
+                "auto",
+                "screenspace"
+            ],
+            "requires": [
+                "mouse-provider"
+            ],
+            "dependencies": [
+                "@qmotion/core"
+            ],
+            "files": [
+                "src/components/HoverTrigger.tsx",
+                "src/hooks/useSimulatedHover.tsx",
+                "src/hooks/useMouseController.tsx"
+            ],
+            "target": "templates/screenspace"
         }
     ]
 }
